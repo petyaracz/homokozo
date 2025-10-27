@@ -2,14 +2,6 @@ library(tidyverse)
 
 d = read_tsv('https://github.com/petyaracz/Racz2024/raw/refs/heads/main/resource/webcorpus2freqlist/webcorpus2_freqlist_hu_with_lemmafreq.tsv.gz')
 
-# egerek = d |> 
-#    filter(str_detect(form,'^(egér|egérnek|egerek|egereknek|egerem|egereim|# egereimnek|egeremnek|egere|egerei)$'))
-
-# my_xpostags = egerek |> 
-#     select(xpostag)
-
-# write_tsv(my_xpostags, 'noun_xpostags.tsv', col_names = FALSE)
-
 my_xpostags = read_tsv('noun_xpostags.tsv', col_names = FALSE) |> 
     pull(X1) |> 
     unique()
